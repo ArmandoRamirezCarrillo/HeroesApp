@@ -1,21 +1,8 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { LoginPage } from '../auth';
-import { HeroesRoutes, childHeroesRoutes } from '../heroes/routes';
-import { PrivateRouter } from './PrivateRouter';
-import { PublicRouter } from './PublicRouter';
-// import { DcPage, MarvelPage } from "../heroes";
+import { AppRoutes } from './AppRoutes';
 
-const router = createBrowserRouter([
-    {
-        path: '/login',
-        element: <PublicRouter> <LoginPage/> </PublicRouter>,
-    },
-    {
-        path: '/',
-        element: <PrivateRouter> <HeroesRoutes/> </PrivateRouter> ,
-        children: childHeroesRoutes
-    },
-]);
+
+const router = createBrowserRouter(AppRoutes);
 
 export const AppRouter = () => {
   return (
